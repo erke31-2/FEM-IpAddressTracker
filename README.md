@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/erke31-2/IpAddressTracker-frontend-mentor/]
-- Live Site URL: [ipaddress-tracker-frontend-mentor.netlify.app/]
+- Live Site URL: [https://ipaddress-tracker-frontend-mentor.netlify.app/]
 
 ## My process
 
