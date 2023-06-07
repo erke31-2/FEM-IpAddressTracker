@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+:root{
+    --VeryDarkGray: hsl(0, 0%, 17%);
+    --DarkGray: hsl(0, 0%, 59%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background: url("assets/images/pattern-bg-mobile.png");
+  position: relative;
+  width: 375px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.3rem;
+  gap: 1rem;
+  align-items: center;
+  height: 280px;
+  font-family: 'Rubik', sans-serif;
+}
+.header h1{
+    color: white;
+    font-weight: 700;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 320px;
+}
+.form div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+.error-text {
+  position: absolute;
+  padding-left: 5px;
+  color: #ff4500;
+  top: 0;
+}
+
+.form-input {
+  margin: 18px 0;
+  width: 90%;
+  padding: 14px 12px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-submit {
+  background-color: var(--VeryDarkGray);
+  padding: 15px 18px;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-submit:hover{
+    background-color: var(--DarkGray);
+}
+
+.data-fields {
+  position: absolute;
+  bottom: -75%;
+  top: 55%;
+  width: 320px;
+  background: aliceblue;
+  border-radius: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.2rem;
+  padding: 1rem;
+  z-index: 9999;
+  height: fit-content;
+}
+
+.data-field {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.4rem;
+}
+
+.data-field label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: small;
+  color: var(--DarkGray);
+  font-weight: 400;
+}
+
+.data-field p{
+    color: var(--VeryDarkGray);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.leaflet-container {
+  height: calc(100vh - 280px);
+  width: 375px;
+  margin: 0 auto;
+}
+
+.fetch-error{
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+}
+
+
+@media (min-width: 560px) {
+  .header {
+    width: 100%;
+    background: url("assets/images/pattern-bg-desktop.png")
+  }
+
+  .form {
+    width: 500px;
+  }
+
+  .data-fields {
+    width: min(960px, 90%);
+    top: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .data-field label {
+    text-align: start;
+  }
+  .data-field p{
+    height: 65px;
+    padding: 3px 0;
+    text-align: start;
+  }
+
+  .leaflet-container {
+    width: 100%;
+  }
+}
+@media (min-width: 960px) {
+  .data-field {
+    position: relative;
+  }
+
+  .data-field:not(:nth-child(1)):after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    height: 85%;
+    width: 1px;
+    background-color: var(--DarkGray);
+    transform: translate(50%, -50%);
+  }
+}
